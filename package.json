@@ -1,0 +1,26 @@
+{
+  "name": "hap-sjablonen",
+  "productName": "HAP Berichtsjablonen",
+  "version": "1.0.0",
+  "description": "Standaardberichten en bijlagen voor Huisartsenpraktijk Aarle-Rixtel",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable --x64"
+  },
+  "build": {
+    "appId": "nl.huisartsenpraktijk-aarle-rixtel.sjablonen",
+    "productName": "HAP Berichtsjablonen",
+    "files": ["main.js", "preload.js", "defaults.js", "renderer/**/*", "build/icon.png", "package.json"],
+    "win": { "icon": "build/icon.png", "target": [{ "target": "portable", "arch": ["x64"] }] },
+    "portable": { "artifactName": "HAP-Berichtsjablonen.exe" },
+    "directories": { "output": "dist" }
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "@fontsource/nunito": "^5.1.0",
+    "@fontsource/open-sans": "^5.1.0"
+  }
+}
